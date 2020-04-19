@@ -26,14 +26,11 @@ class Database {
   }
 
   mongo() {
-    this.mongo.connection = mongoose.connect(
-      'mongodb://192.168.99.100:27017/gobarber',
-      {
-        useNewUrlParser: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true,
-      }
-    );
+    this.mongo.connection = mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useFindAndModify: true,
+      useUnifiedTopology: true,
+    });
   }
 }
 
